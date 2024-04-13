@@ -18,7 +18,12 @@ return new class extends Migration
             $table->string('other_name')->nullable();
             $table->string('email')->unique();
             $table->string('phone_number')->unique()->nullable();
-            $table->enum('account_type', ['cubbes_staff', 'student']);
+            $table->tinyInteger('account_type')->default(0);
+            $table->foreignId('university_id')->nullable()->constrained('universities');
+            $table->foreignId('faculty_id')->nullable()->constrained('faculties');
+            $table->foreignId('department_id')->nullable()->constrained('departments');
+            $table->foreignId('school_level_id')->nullable()->constrained('school_levels');
+            $table->foreignId('level_semester_id')->nullable()->constrained('level_semesters');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
