@@ -4,21 +4,20 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Resources\UniversityResource;
 
-use App\Models\University;
+use App\Http\Resources\DepartmentResource;
+use App\Models\Department;
 
-
-
-class UniversityController extends Controller
+class DepartmentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request, $faculty_id)
     {
-        $university = University::all();
-        return UniversityResource::collection($university);
+
+        $departments = Department::where('faculty_id', $faculty_id)->get();
+        return DepartmentResource::collection($departments);
     }
 
     /**

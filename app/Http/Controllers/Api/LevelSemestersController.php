@@ -4,21 +4,21 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Resources\UniversityResource;
 
-use App\Models\University;
+use App\Http\Resources\LevelSemesterResource;
+
+use App\Models\LevelSemester;
 
 
-
-class UniversityController extends Controller
+class LevelSemestersController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $university = University::all();
-        return UniversityResource::collection($university);
+        $semester = LevelSemester::all();
+        return LevelSemesterResource::collection($semester);
     }
 
     /**
