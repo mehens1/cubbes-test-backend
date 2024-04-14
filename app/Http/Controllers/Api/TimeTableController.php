@@ -31,7 +31,6 @@ class TimeTableController extends Controller
 
         // return $timetables;
         return TimeTableResource::collection($timetables);
-        // return new TimeTableResource::collection($timetables);
     }
 
     /**

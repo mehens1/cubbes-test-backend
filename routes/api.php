@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\Api\TimetableController;
+use App\Http\Controllers\Api\UniversityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,4 @@ Route::middleware('auth:sanctum')->group(function () {
 
 });
 
+Route::apiResource('university', UniversityController::class);
