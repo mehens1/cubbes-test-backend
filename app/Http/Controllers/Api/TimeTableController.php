@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\TimeTableResource;
 
-use App\Models\Timetable;
+use App\Models\TimeTable;
 
 class TimeTableController extends Controller
 {
